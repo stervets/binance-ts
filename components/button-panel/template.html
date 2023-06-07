@@ -1,0 +1,25 @@
+<div class="button-panel">
+    <div class="buttons">
+        <button ref="addButton"
+                class="button"
+                :class="{disabled: isAddButtonDisabled}"
+                @click="showDropdown"
+        >
+            <Icon name="material-symbols:add-box-rounded" size="30px" />
+            <div>Create</div>
+        </button>
+        <button
+                class="button"
+                :class="{disabled: isAlignButtonDisabled}"
+                @click="alignWidgets"
+        >
+            <Icon name="simple-icons:windows11"  size="22px"/>
+            <div>Align</div>
+        </button>
+        <dropdown v-if="state.showDropdown"
+                  :state="state"
+                  :position="dropdownPosition"
+                  @select="addNewWidget"/>
+    </div>
+    <div class="title"><h3>Binance currencies</h3></div>
+</div>

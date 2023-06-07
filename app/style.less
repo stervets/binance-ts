@@ -1,0 +1,19 @@
+@import "assets/mixins";
+
+html, body, #app, .main-layout, body>div {
+    .fullSize();
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: @white;
+    background: linear-gradient(to bottom, @dark - #111, @dark);
+    font-family: 'Roboto-Light', serif;
+    font-size: 12pt;
+}
+
+a{
+    color: @white;
+}

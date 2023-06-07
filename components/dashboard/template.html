@@ -1,0 +1,12 @@
+<div class="dashboard">
+    <div class="dashboard-background-image" ref="image"/>
+    <div class="dashboard-grid" :class="{show: dashboardStore.showGrid}" ref="grid"/>
+    <template v-for="widget in widgets" :key="widget.id">
+        <Widget :widget="widget"
+                :ref="`w_${widget.id}`"
+                @getCollision="getCollision"
+                @saveWidgets="saveWidgets"
+                @deleteWidget="deleteWidget"
+        />
+    </template>
+</div>

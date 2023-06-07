@@ -1,0 +1,18 @@
+<div class="main-layout">
+    <div class="navigation-bar">
+        <nav>
+            <template v-for="(title, path) of menu">
+                <NuxtLink :class="['menu-item', {active: route.path === path}]"
+                          :href="path"
+                >
+                    {{ title }}
+                </NuxtLink>
+            </template>
+        </nav>
+    </div>
+    <div class="page-content">
+        <main>
+            <slot/>
+        </main>
+    </div>
+</div>

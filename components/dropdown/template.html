@@ -1,0 +1,7 @@
+<div class="dropdown" :style="{ left: position.left + 'px', top: position.top + 'px' }">
+    <ul>
+        <template v-for="coin of sortedItems" :key="title">
+            <li @mouseup="select(coin)">{{ Coins[coin] }}</li>
+        </template>
+    </ul>
+</div>

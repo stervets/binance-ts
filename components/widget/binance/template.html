@@ -1,0 +1,13 @@
+<div class="widget-binance">
+    <div class="widget-binance-chart"
+         :class="{loaded: isLoaded}"
+         ref="chartView"/>
+
+    <div class="widget-binance-loading"
+         :class="{loaded: isLoaded}">
+        <div class="widget-binance-loading-content">
+            <div><img src="/img/loading.gif"/></div>
+            <div>Awaiting data...</div>
+        </div>
+    </div>
+</div>

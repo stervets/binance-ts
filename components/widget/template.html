@@ -1,0 +1,33 @@
+<div class="widget-container"
+     :style="`left: ${left}px; top: ${top}px; width: ${width}px; height: ${height}px;`"
+     :class="{
+         animated: !movingWidget.id,
+         closing: isClosing,
+         opened: isOpened
+     }">
+    <div class="widget">
+        <div class="widget-title" ref="widgetTitle">
+            <div class="widget-title-text" v-html="title"/>
+            <div class="widget-controls">
+                <Icon name="material-symbols:close"
+                      class="widget-control pointer"
+                      size="18px"
+                      @click="onClose"
+                      @mousedown.prevent
+                />
+            </div>
+        </div>
+        <div class="widget-content" :class="{resizing}">
+            <component :is="content" :widgetView="this" ref="widgetContent"/>
+        </div>
+        <div class="widget-resize" ref="resize">
+            <Icon name="material-symbols:bottom-right-click" class="widget-control"/>
+        </div>
+    </div>
+    <div class="widget-moving-tip"
+         :class="{show: movingWidget.id, resize: resizing}"
+         ref="tip"
+    >
+        {{ movingTip }}
+    </div>
+</div>

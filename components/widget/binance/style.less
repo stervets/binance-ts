@@ -1,0 +1,44 @@
+@import "assets/mixins";
+
+.widget-binance {
+    .fullSize();
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+
+    .widget-binance-chart {
+        .fullSize();
+        opacity: 0;
+        transition: opacity .3s ease;
+        border-radius: 0 0 5px 5px;
+        &.loaded {
+            opacity: 1;
+        }
+    }
+
+    .widget-binance-loading {
+        .absolute();
+        .fullSize();
+        background-color: @light;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: opacity .3s ease;
+        opacity: 1;
+
+        &.loaded {
+            opacity: 0;
+        }
+
+        .widget-binance-loading-content{
+            text-align: center;
+            margin: auto;
+        }
+
+        img {
+            width: 50px;
+            margin: 0 auto;
+            opacity: .4;
+        }
+    }
+}

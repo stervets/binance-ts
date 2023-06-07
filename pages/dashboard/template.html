@@ -1,0 +1,14 @@
+<div class="page-dashboard">
+    <ButtonPanel ref="panel"
+                     @alignWidgets="alignWidgets"
+                     @addNewWidget="onAddNewWidget"
+    />
+    <CentralBlock class="page-dashboard-central-block" :corner="true">
+        <Dashboard ref="dash"
+                       class="dashboard-component"
+                       @widgetsLoaded="onWidgetsLoaded"
+                       @deleteWidget="onDeleteWidget"
+                       @toggleAlignButton="toggleAlignButton"
+        />
+    </CentralBlock>
+</div>
