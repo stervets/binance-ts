@@ -4,7 +4,7 @@
 ### Description
 
 This application receives data from the Binance cryptocurrency exchange in real-time using websockets.
-You can add, remove, move and resize widgets. User data is stored in Firebase.
+You can add, remove, move and resize widgets. User data stores in Firebase.
 
 ### Used technologies
 - TypeScript
