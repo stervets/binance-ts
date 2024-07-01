@@ -1,6 +1,4 @@
-//@ts-ignore
 import DashboardWorker from '#service-worker';
-
 import {initializeApp} from "firebase/app";
 import {getDatabase, ref as dbReference, onValue, update, remove} from "firebase/database";
 import {genId, timeout} from "~/composables/const";
@@ -21,7 +19,7 @@ export default {
 
         return {
             db,
-            worker: null,
+            worker: null as Worker,
             widgetsRef,
             dashboardStore: useDashboardStore(),
             widgets: ref({} as Widgets),

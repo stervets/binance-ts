@@ -2,20 +2,20 @@ export default {
     name: 'Dropdown',
     props: ['state', 'position'],
 
-    setup(){
+    setup() {
         return {
             Coins
         };
     },
 
     computed: {
-        sortedItems(this: any) {
-            return Object.keys(this.state.items).sort();
+        sortedCoins(this: any) {
+            const items = this.state.items;
+            return Object.keys(items).sort((keyA, keyB) => items[keyA] > items[keyB] ? 1 : -1);
         }
     },
 
     async mounted(this: any) {
-        console.log(this.state);
         $('body').on('mouseup', this.closeDropdown);
     },
 
